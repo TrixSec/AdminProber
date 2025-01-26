@@ -56,7 +56,7 @@ pip install -r requirements.txt
 To start scanning for admin panels on a target website, run the script with the required arguments. Here's an example:
 
 ```bash
-python admin_prober.py --target https://example.com --threads 10 --paths wordlist/admin_paths.txt --output results/admin_results.txt
+python adminprober.py --target https://example.com --threads 10 --paths wordlist/admin_paths.txt --output results/admin_results.txt
 ```
 
 ### Command-line arguments:
