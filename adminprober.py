@@ -16,7 +16,7 @@ import time
 import urllib3
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
-PROBER_VERSION = 1.1
+PROBER_VERSION = "1.1" # has to be string, because you are checking 1.1 == "1.1" -- always gonna be false
 AUTHOR = "Trix Cyrus"
 COPYRIGHT = "Copyright © 2024 Trixsec Org"
 
