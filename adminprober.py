@@ -88,7 +88,7 @@ def scan_url(target_url, path_queue, results, timeout=5):
         url = urljoin(target_url, path)
         try:
             print(colored("[", "white") + colored("INFO", "green", attrs=["bold"]) + colored(f"] Testing {url}", "red", attrs=["bold"]))  
-            response = requests.get(url, timeout=timeout, allow_redirects=True, verify=True) # you might get your https responses modified by middleman attacker. it's okay if you are targeting sanctioned recources, but for your own safety keep this True
+            response = requests.get(url, timeout=timeout, allow_redirects=True, verify=False) # careful with this one
             status_code = response.status_code
             page_content = response.text.lower()
 
