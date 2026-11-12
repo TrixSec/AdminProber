@@ -16,7 +16,7 @@ import time
 import urllib3
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
-PROBER_VERSION = 1.1
+PROBER_VERSION = "1.1" # has to be string, because you are checking 1.1 == "1.1" -- always gonna be false
 AUTHOR = "Trix Cyrus"
 COPYRIGHT = "Copyright © 2024 Trixsec Org"
 
@@ -88,7 +88,7 @@ def scan_url(target_url, path_queue, results, timeout=5):
         url = urljoin(target_url, path)
         try:
             print(colored("[", "white") + colored("INFO", "green", attrs=["bold"]) + colored(f"] Testing {url}", "red", attrs=["bold"]))  
-            response = requests.get(url, timeout=timeout, allow_redirects=True, verify=False)
+            response = requests.get(url, timeout=timeout, allow_redirects=True, verify=False) # careful with this one
             status_code = response.status_code
             page_content = response.text.lower()
 
